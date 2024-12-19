@@ -16,8 +16,6 @@ import html2canvas from "html2canvas-pro";
 import jsPDF from "jspdf";
 import confetti from "canvas-confetti"
 import Link from "next/link";
-import { TrackingProvider } from "../components/tracking-provider";
-import { AnalyticsDashboard } from "../components/analytics-dashboard";
 
 export default function Home() {
   const [personalDetails, setPersonalDetails] = useState<PersonalDetails>(personalDetailsPreset)
@@ -140,7 +138,6 @@ export default function Home() {
 
 
   return (
-    <TrackingProvider>
     <div>
       <div className="hidden lg:block">
         <section className="flex items-center h-screen">
@@ -367,11 +364,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* Add the analytics dashboard */}
-              <div className="fixed bottom-4 right-4 z-50">
-                <AnalyticsDashboard />
-              </div>
     </div>
-    </TrackingProvider>
   );
 }
